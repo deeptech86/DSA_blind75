@@ -15,14 +15,15 @@ def best_time_to_buy_and_sell_stock(prices):
         int - Maximum profit
     """
     # TODO: Implement solution
-    start =0
-
-    while start<len(prices)-1:
-        if prices[start]> prices[start+1]:
-            start+=1
-            max_price = max(prices[start:])
-            if prices.index(max_price) > start:
-                return max_price - prices[start]
+    min_price=prices[0]
+    max_profit = 0
+    for price in prices:
+        if price < min_price:
+            min_price= price
+        else:
+            current_profit = price - min_price
+            max_profit =max(current_profit, max_profit)
+    return max_profit
 
 
 
@@ -35,3 +36,7 @@ def best_time_to_buy_and_sell_stock(prices):
 # Input: prices = [7, 6, 4, 3, 1]
 # Output: 0
 # Explanation: No transactions are done (i.e., max profit = 0)
+
+
+prices = [7, 6, 4, 3, 1]
+print(best_time_to_buy_and_sell_stock(prices))
