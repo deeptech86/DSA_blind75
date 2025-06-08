@@ -15,7 +15,12 @@ def maximum_subarray(nums):
         int - Sum of contiguous subarray with largest sum
     """
     # TODO: Implement solution
-    pass
+    best_sum = nums[0]
+    current_sum =0
+    for i in nums:
+        current_sum= max(i,current_sum+i)
+        best_sum = max(best_sum,current_sum)
+    return best_sum
 
 
 # Example 1
@@ -27,3 +32,15 @@ def maximum_subarray(nums):
 # Input: nums = [1]
 # Output: 1
 # Explanation: The subarray [1] has the largest sum = 1
+
+# Kadane Algo template
+# best_sum=arr[0]
+# current_sum = 0
+# for i in nums:
+#     current_sum =max(i,current_sum+i)
+#     best_sum = max(best_sum,current_sum)
+# return best_sum
+
+
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+print(maximum_subarray(nums))

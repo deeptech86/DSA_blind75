@@ -14,7 +14,9 @@ def find_minimum_in_rotated_sorted_array(nums):
         int - Minimum element in the array
     """
     # TODO: Implement solution
-    pass
+    min_value= min(nums)
+    get_index= nums.index(min_value)
+    print(get_index)
 
 
 # Example 1
@@ -26,3 +28,6 @@ def find_minimum_in_rotated_sorted_array(nums):
 # Input: nums = [4, 5, 6, 7, 0, 1, 2]
 # Output: 0
 # Explanation: The original array was [0, 1, 2, 4, 5, 6, 7] rotated 4 times
+
+nums = [3, 4, 5, 1, 2]
+find_minimum_in_rotated_sorted_array(nums)
