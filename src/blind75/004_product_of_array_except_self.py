@@ -15,7 +15,28 @@ def product_of_array_except_self(nums):
         List[int] - Product of all elements except self
     """
     # TODO: Implement solution
-    pass
+    n = len(nums)
+    pref = [1] * n
+
+    total=1
+
+    for i in range(len(nums)):
+        if nums[i]!=0:
+            total *= nums[i]
+        else:
+            total = 0
+
+    for i in range(len(nums)):
+            if nums[i] != 0:
+                pref[i] = total//nums[i]
+            else:
+                pref[i] = total
+
+
+
+    return pref
+
+
 
 
 # Example 1
@@ -27,3 +48,6 @@ def product_of_array_except_self(nums):
 # Input: nums = [-1, 1, 0, 3, -3]
 # Output: [0, 0, 9, 0, 0]
 # Explanation: Zero in the array causes most products to be zero
+
+nums = [-1, 1, 0, 3, -3]
+print(product_of_array_except_self(nums))
