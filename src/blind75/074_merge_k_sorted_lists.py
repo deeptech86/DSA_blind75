@@ -22,13 +22,24 @@ def merge_k_sorted_lists(lists):
         ListNode - Head of the merged, sorted linked list
     """
     # TODO: Implement solution
-    pass
+    merged =[]
+    if len(lists) == 0:
+        return False
+    else:
+        for each_lists in lists:
+            for
+            merged.append(each_lists)
+        return sorted(merged)
 
+lists = [[1, 4, 5], [1, 3, 4], [2, 6]]
+print(merge_k_sorted_lists(lists))
 
 # Example 1
 # Input: lists = [[1, 4, 5], [1, 3, 4], [2, 6]]
 # Output: [1, 1, 2, 3, 4, 4, 5, 6]
 # Explanation: Merging all k sorted lists into one sorted list
+
+
 
 # Example 2
 # Input: lists = []

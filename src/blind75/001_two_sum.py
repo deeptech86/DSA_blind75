@@ -26,13 +26,13 @@ def two_sum(nums, target):
     #     else:
     #         return [slow,fast]
     # return -1 #Target not found
-    start=0
-    while start<len(nums):
-        if (target - nums[start]) in nums:
-            if nums.index(target-nums[start]) != start:
-                return [start, nums.index(target-nums[start])]
-            start+=1
-    return -1
+    tup = set()
+    for i in range(len(nums)):
+        if target - nums[i] in nums:
+            tup.add(i+1)
+    return tup
+
+
 
 
 
@@ -46,6 +46,6 @@ def two_sum(nums, target):
 # Output: [1, 2]
 # Explanation: nums[1] + nums[2] = 2 + 4 = 6
 
-nums = [3, 3, 4]
+nums = [3, 4, 3,3 ,3,2]
 target = 6
 print(two_sum(nums, target))

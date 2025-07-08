@@ -15,7 +15,19 @@ def valid_parentheses(s):
         bool - True if the input string is valid, False otherwise
     """
     # TODO: Implement solution
-    pass
+    slst=[]
+    for char in s:
+        if char in ['(',  '{',  '[' ]:
+            slst.append(char)
+        else:
+            # if char in [')',  '}',  ']' ]:
+                if len(slst) >0 :
+                    if slst[-1]=='(' and char == ')' or slst[-1]=='{' and char == '}' or slst[-1]=='[' and char == ']' :
+                        slst.remove( slst[-1])
+    if len(slst)!=0:
+        return False
+    return True
+
 
 
 # Example 1
@@ -27,3 +39,6 @@ def valid_parentheses(s):
 # Input: s = "()[]{}"
 # Output: True
 # Explanation: All types of parentheses are matched and in the correct order
+
+s = "()[]{"
+print(valid_parentheses(s))

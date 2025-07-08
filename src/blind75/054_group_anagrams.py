@@ -2,6 +2,8 @@
 Problem: Group Anagrams
 Technique: Hash Table
 """
+from collections import defaultdict
+
 
 def group_anagrams(strs):
     """
@@ -14,7 +16,24 @@ def group_anagrams(strs):
         List[List[str]] - Grouped anagrams
     """
     # TODO: Implement solution
-    pass
+    # dict = defaultdict(list)
+    # grouped=[]
+    # for each_str in strs:
+    #     sorted_s = "".join(sorted(each_str))
+    #     # if sorted(each_str) not in dict.values():
+    #     dict[sorted(each_str)].append(each_str)
+    # return list(dict.values())
+
+    sMap = defaultdict(list)
+
+    for s in strs:
+        sorted_s = "".join(sorted(s))
+        sMap[sorted_s].append(s)
+
+    return list(sMap.values())
+
+
+
 
 
 # Example 1
@@ -26,3 +45,5 @@ def group_anagrams(strs):
 # Input: strs = [""]
 # Output: [[""]]
 # Explanation: There is only one word, which forms its own group
+strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(strs))

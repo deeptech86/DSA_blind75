@@ -15,7 +15,12 @@ def valid_anagram(s, t):
         bool - True if t is an anagram of s, False otherwise
     """
     # TODO: Implement solution
-    pass
+    if len(s)==len(t):
+        for char in s:
+            if s.count(char)== t.count(char):
+                return True
+    else:
+        return False
 
 
 # Example 1
@@ -27,3 +32,7 @@ def valid_anagram(s, t):
 # Input: s = "rat", t = "car"
 # Output: False
 # Explanation: The characters in s cannot be rearranged to form t
+
+s = "anagram"
+t = "nagaram"
+print(valid_anagram(s, t))

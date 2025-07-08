@@ -14,7 +14,15 @@ def longest_palindromic_substring(s):
         str - Longest palindromic substring
     """
     # TODO: Implement solution
-    pass
+    left=0
+    right=len(s)
+    lst= list(str)
+    while left < right:
+        if lst[left] != lst[right]:
+            right = right-1
+
+
+
 
 
 # Example 1

@@ -15,7 +15,18 @@ def missing_number(nums):
         int - The missing number in the range
     """
     # TODO: Implement solution
-    pass
+    # max= nums[0]
+    # min =nums[0]
+    # # for i in range(1,len(nums)):
+    # #     if nums[i] > max :
+    # #         max= nums[i]
+    # #     elif nums[i] < min:
+    # #         min = nums[i]
+    new_arr = sorted(nums)
+    for i in range(len(new_arr)-1):
+        if new_arr[i] + 1 != new_arr[i+1] :
+            return new_arr[i] + 1
+
 
 
 # Example 1
@@ -27,3 +38,5 @@ def missing_number(nums):
 # Input: nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
 # Output: 8
 # Explanation: The array should contain all numbers from 0 to 9, but 8 is missing
+nums = [9, 6, 4,  3, 5, 7, 8 ,11]
+print(missing_number(nums))

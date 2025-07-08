@@ -15,13 +15,13 @@ def contains_duplicate(nums):
         bool - True if array contains duplicates, False otherwise
     """
     # TODO: Implement solution
-    hash_set =nums[0]
-    start=1
-    for start in range(len(nums)):
-        if nums[start] in hash_set:
+    hashset=set()
+    current=1
+    for current in range(len(nums)):
+        if nums[current] in hashset:
             return True
         else:
-            hash_set.append(nums[start])
+            hashset.add(nums[current])
     return False
 
 
@@ -36,14 +36,15 @@ def contains_duplicate(nums):
 # Explanation: No duplicates in the array
 
 
-nums = [0, 0, 1, 1, 1, 2, 2]
-def remove_duplicate(nums):
-    slow, fast =0,1
-    while fast < len(nums):
-        if nums[slow]==nums[fast]:
-            slow+=1
-        else:
-            fast+=1
-    return nums
-
-print(remove_duplicate(nums))
+nums = [1, 2, 3, 4]
+print(contains_duplicate(nums))
+# def remove_duplicate(nums):
+#     slow, fast =0,1
+#     while fast < len(nums):
+#         if nums[slow]==nums[fast]:
+#             slow+=1
+#         else:
+#             fast+=1
+#     return nums
+#
+# print(remove_duplicate(nums))

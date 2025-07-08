@@ -14,7 +14,23 @@ def longest_increasing_subsequence(nums):
         int - Length of the longest increasing subsequence
     """
     # TODO: Implement solution
-    pass
+    substring =[]
+    substring.append(nums[0])
+    lastadded =0
+
+    for i in range(1,len(nums)):
+        if substring[0] >= nums[i]:
+            substring[0]=nums[i]
+        else:
+
+            if  substring[-1] > nums[i]:
+                substring.pop()
+
+            substring.append(nums[i])
+    print(str(substring))
+    return len(substring)
+
+
 
 
 # Example 1
@@ -26,3 +42,7 @@ def longest_increasing_subsequence(nums):
 # Input: nums = [0, 1, 0, 3, 2, 3]
 # Output: 4
 # Explanation: The longest increasing subsequence is [0, 1, 2, 3], therefore the length is 4
+
+
+nums = [0, 1, 0, 3, 2, 3]
+print(longest_increasing_subsequence(nums))

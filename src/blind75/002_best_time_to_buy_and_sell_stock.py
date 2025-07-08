@@ -38,5 +38,5 @@ def best_time_to_buy_and_sell_stock(prices):
 # Explanation: No transactions are done (i.e., max profit = 0)
 
 
-prices = [7, 6, 4, 3, 1]
+prices = [7, 2, 5, 3, 6, 4, 2,8]
 print(best_time_to_buy_and_sell_stock(prices))
